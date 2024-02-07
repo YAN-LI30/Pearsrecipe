@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+  body {
+   background-color:#0b0b0b;
+   background-image: url("image/pearbackground.svg");
+   background-attachment: absolute;
+   background-repeat: no-repeat;
+   background-size: 1300px;
+   width: 1300px;
+   height: 500px;
+  
+  
+    }
+    .stickera {
+    transition: 0.7s;
+    }
+    .stickera :hover{
+      transform:rotate(-10deg) rotateY(10deg);
+      filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.201));
+      transform-origin: left bottom;
+      cursor: grab;
+    }
+
+
+    .stickerb {
+    transition: 0.7s;
+    }
+    .stickerb :hover{
+      transform:rotate(10deg) rotateY(10deg);
+      filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.201));
+      transform-origin: right bottom;
+      cursor: grab;
+    }
+
+    #img01 {
+    position:absolute;
+    top:45px;
+    left: 112px;    
+    }
+
+   #img02 {
+    position:absolute;
+    top:300px;
+    left: 63px;
+    }
+    #img03 {
+    position:absolute;
+    top:354px;
+    left: 205px;    
+    }
+
+   #img04 {
+    position:absolute;
+    top:460px;
+    left: 450px;
+    }
+
+    #img05 {
+    position:absolute;
+    top:230px;
+    left: 545px;    
+    }
+
+   #img06 {
+    position:absolute;
+    top:260px;
+    left: 702px;
+    }
+    #img07 {
+    position:absolute;
+    top:430px;
+    left: 918px;
+    }
+
+    #img08 {
+    position:absolute;
+    top:300px;
+    left: 1022px;    
+    }
+
+   #img09 {
+    position:absolute;
+    top:65px;
+    left: 1070px;
+    }
+  
+  .iconbox{
+    height: 300px;
+    width: 400px;
+  }
+  .iconbox :hover{
+    transform: scale(1.04); 
+    transition: .3s;
+    cursor: grab;
+  }
+
+  #icon{
+  position:absolute;
+  top:490px;
+  left:30px;
+  }
+
+    </style>
+    </head>
+    <body>
+      <div  class="stickera" id="img01"  onclick="removeStickera(this)"> <img src="image/pears01.png" style="height: 270px" ></div>
+        <div class="stickera" id="img02" onclick="removeStickera(this)"> <img src="image/pears02.png" style="height: 140px" ></div>
+        <div  class="stickerb" id="img03"  onclick="removeStickerb(this)"> <img src="image/pears03.png" style="height: 150px" ></div>
+        <div class="stickerb" id="img04" onclick="removeStickerb(this)"> <img src="image/pears04.png" style="height: 185px" ></div>
+        <div  class="stickera" id="img05"  onclick="removeStickera(this)"> <img src="image/pears05.png" style="height: 222px" ></div>
+        <div class="stickerb" id="img06" onclick="removeStickerb(this)"> <img src="image/pears06.png" style="height: 222px" ></div>
+        <div  class="stickera" id="img07"  onclick="removeStickera(this)"> <img src="image/pears07.png" style="height: 185px" ></div>
+        <div class="stickerb" id="img08" onclick="removeStickerb(this)"> <img src="image/pears08.png" style="height: 235px" ></div>
+        <div  class="stickera" id="img09"  onclick="removeStickera(this)"> <img src="image/pears09.png" style="height: 210px" ></div>
+
+        <div  class="iconbox" onclick="iconChange()"> <img  src="image/icon1.gif" style="height: 210px" id="icon"></div>
+
+
+    <script>
+      function removeStickera(element){
+        element.style.transform = "rotate(-0.2turn) translateX(-15vh) translatey(-10vh)";
+        element.style.opacity = "0"; 
+        element.style.pointerEvents = "none"; 
+      }
+
+      function removeStickerb(element){
+    element.style.transform = "rotate(0.2turn) translateX(10vh) translatey(-15vh)";
+    element.style.opacity = "0"; 
+        element.style.pointerEvents = "none"; 
+      }
+
+  ///icon change functions///
+
+    var icon = document.querySelector("#icon");
+    var imageNumber = 0;
+    function iconChange(){
+      imageNumber = imageNumber + 1;
+      if (imageNumber == 1) {
+        icon.src= "image/icon2.gif";
+      } else if (imageNumber == 2){
+        icon.src = "image/icon3.gif";
+      } else {
+        goBack();
+      }
+    }
+    
+
+    function goBack(){
+      window.location.reload();
+    }
+      
+    </script>
+    </body>
+</html>
